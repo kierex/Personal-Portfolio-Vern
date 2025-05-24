@@ -17,10 +17,19 @@
       color: #fff;
       margin: 0;
       padding: 0;
+      font-size: 1.1rem;
     }
 
     h1, h2, .nav__logo {
       font-family: 'Playfair Display', serif;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
     }
 
     .nav__logo, .nav__link {
@@ -34,22 +43,40 @@
     }
 
     .home__title {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin: 0.5rem 0;
     }
 
     .home__skill {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       color: #ccc;
     }
 
     input, textarea {
       width: 100%;
-      padding: 0.75rem;
+      padding: 0.85rem;
       margin: 0.5rem 0;
       border: none;
       border-radius: 8px;
+      font-size: 1.05rem;
       font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      box-shadow: 0 0 12px #4CAF50;
     }
 
     form {
@@ -103,8 +130,8 @@
     }
 
     .home__social-icon {
-      font-size: 1.8rem;
-      margin-right: 1rem;
+      font-size: 2rem;
+      margin-right: 1.2rem;
       cursor: pointer;
     }
 
@@ -125,19 +152,21 @@
       top: 20px;
       right: 20px;
       z-index: 999;
-      background: #ff4081;
+      background: #2196F3;
       color: white;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.4rem;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       font-weight: 600;
+      font-size: 1rem;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .music-toggle:hover {
-      background-color: #e91e63;
-      box-shadow: 0 0 15px #ff4081;
+      background-color: #1e88e5;
+      box-shadow: 0 0 15px #2196F3;
     }
 
     #youtube-iframe {
@@ -183,7 +212,6 @@
       </div>
     </div>
 
-    <!-- Sections -->
     <section id="about" class="section" data-aos="fade-right">
       <h2>About Me</h2>
       <p>I am Vern Esg, a passionate web developer who builds clean and creative websites.</p>
@@ -268,7 +296,7 @@
       const button = document.querySelector(".music-toggle");
 
       if (!isPlaying) {
-        iframe.src = "https://www.youtube.com/embed/JGwWNGJdvx8?autoplay=1&loop=1&playlist=Ukko12nzYcI";
+        iframe.src = "https://www.youtube.com/embed/JGwWNGJdvx8?autoplay=1&loop=1&playlist=JGwWNGJdvx8";
         button.textContent = "Pause Music";
         isPlaying = true;
       } else {
