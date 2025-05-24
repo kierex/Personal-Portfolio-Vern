@@ -2,24 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <title>My Personal Portfolio</title>
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
-
     h1, h2 {
       font-family: 'Playfair Display', serif;
     }
-
+    .section {
+      margin-top: 60px;
+    }
     #contact form {
       display: flex;
       flex-direction: column;
@@ -27,14 +24,12 @@
       max-width: 400px;
       margin-top: 20px;
     }
-
     #contact input, #contact textarea {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-family: 'Poppins', sans-serif;
     }
-
     #contact button {
       padding: 10px;
       background-color: #007bfc;
@@ -44,7 +39,6 @@
       font-size: 1rem;
       cursor: pointer;
     }
-
     #contact button:hover {
       background-color: #005bb5;
     }
@@ -52,7 +46,6 @@
 </head>
 
 <body>
-
   <!-- OVERLAY -->
   <div class="overlay first"></div>
   <div class="overlay second"></div>
@@ -62,9 +55,8 @@
   <header class="l-header">
     <nav class="nav bd-grid">
       <div>
-        <a href="#" class="nav__logo">programmer</a>
+        <a href="#" class="nav__logo">Programmer</a>
       </div>
-
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
@@ -74,7 +66,6 @@
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </div>
-
       <div class="nav__toggle" id="nav-toggle">
         <ion-icon name="menu"></ion-icon>
       </div>
@@ -88,14 +79,13 @@
         <span class="home__pressent Esg-text">Hello, My name is</span>
         <h1 class="home__title anime-text">Vern Esg</h1>
         <span class="home__skill anime-text">Web Developer</span>
-
         <div>
           <a href="#services" class="home__button anime-text">Bot Maker</a>
         </div>
       </div>
 
       <div class="home__img">
-        <img src="https://i.imgur.com/bfELRaR.jpeg" alt="">
+        <img src="https://i.imgur.com/bfELRaR.jpeg" alt="Profile Image" />
       </div>
 
       <div class="home__social">
@@ -148,5 +138,4 @@
   <!-- ICONS -->
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 </body>
-
 </html>
