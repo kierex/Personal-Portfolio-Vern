@@ -17,64 +17,10 @@
       color: #fff;
       margin: 0;
       padding: 0;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-
-    .loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .loader.fade-out {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader span {
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      margin: 3px;
-      background-color: #4CAF50;
-      border-radius: 50%;
-      animation: bounce 0.6s infinite alternate;
-    }
-
-    .loader span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .loader span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes bounce {
-      to {
-        transform: translateY(-20px);
-        background-color: #8BC34A;
-      }
     }
 
     h1, h2, .nav__logo {
       font-family: 'Playfair Display', serif;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    p, li {
-      font-size: 1.1rem;
     }
 
     .nav__logo, .nav__link {
@@ -88,40 +34,22 @@
     }
 
     .home__title {
-      font-size: 3.2rem;
+      font-size: 3rem;
       margin: 0.5rem 0;
     }
 
     .home__skill {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       color: #ccc;
     }
 
     input, textarea {
       width: 100%;
-      padding: 0.85rem;
+      padding: 0.75rem;
       margin: 0.5rem 0;
       border: none;
       border-radius: 8px;
-      font-size: 1.05rem;
       font-family: 'Poppins', sans-serif;
-    }
-
-    button {
-      padding: 0.75rem 1.5rem;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #45a049;
-      box-shadow: 0 0 12px #4CAF50;
     }
 
     form {
@@ -139,9 +67,9 @@
 
     .nav {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding: 1rem 2rem;
       background-color: rgba(0, 0, 0, 0.8);
     }
 
@@ -149,19 +77,15 @@
       display: flex;
       list-style: none;
       gap: 1.5rem;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
     }
 
     .home {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       padding: 2rem;
       gap: 2rem;
-      text-align: center;
     }
 
     .home__information {
@@ -179,9 +103,21 @@
     }
 
     .home__social-icon {
-      font-size: 2rem;
-      margin-right: 1.2rem;
+      font-size: 1.8rem;
+      margin-right: 1rem;
       cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .home {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .home__information {
+        max-width: 100%;
+      }
     }
 
     .music-toggle {
@@ -189,21 +125,19 @@
       top: 20px;
       right: 20px;
       z-index: 999;
-      background: #2196F3;
+      background: #ff4081;
       color: white;
-      padding: 0.6rem 1.4rem;
+      padding: 0.5rem 1rem;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 1rem;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .music-toggle:hover {
-      background-color: #1e88e5;
-      box-shadow: 0 0 15px #2196F3;
+      background-color: #e91e63;
+      box-shadow: 0 0 15px #ff4081;
     }
 
     #youtube-iframe {
@@ -211,15 +145,117 @@
     }
   </style>
 </head>
-<body>
-  <div class="loader" id="page-loader">
-    <span></span><span></span><span></span>
-  </div>
 
+<body>
   <button class="music-toggle" onclick="toggleYouTubeMusic()">Play Music</button>
   <iframe id="youtube-iframe" width="0" height="0" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
 
-  <!-- Rest of your HTML content here (header, main, etc.) -->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div><a href="#" class="nav__logo">Programmer</a></div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+          <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="l-main bd-grid">
+    <div class="home" data-aos="fade-up">
+      <div class="home__information">
+        <span class="home__pressent">Hello, My name is</span>
+        <h1 class="home__title">Vern Esg</h1>
+        <span class="home__skill">Web Developer</span>
+        <div class="home__social">
+          <ion-icon name="logo-facebook" class="home__social-icon"></ion-icon>
+          <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
+          <ion-icon name="logo-twitter" class="home__social-icon"></ion-icon>
+        </div>
+      </div>
+      <div class="home__img">
+        <img src="https://i.imgur.com/bfELRaR.jpeg" alt="Profile Image" />
+      </div>
+    </div>
+
+    <!-- Sections -->
+    <section id="about" class="section" data-aos="fade-right">
+      <h2>About Me</h2>
+      <p>I am Vern Esg, a passionate web developer who builds clean and creative websites.</p>
+    </section>
+
+    <section id="services" class="section" data-aos="fade-left">
+      <h2>Services</h2>
+      <ul>
+        <li>Responsive Web Development</li>
+        <li>Landing Page Design</li>
+        <li>UI/UX Design</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="section" data-aos="zoom-in">
+      <h2>Skills</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <div style="flex: 1; min-width: 200px;">
+          <h4>Frontend</h4>
+          <ul>
+            <li><i class="fab fa-html5"></i> HTML5</li>
+            <li><i class="fab fa-css3-alt"></i> CSS3 & SCSS</li>
+            <li><i class="fab fa-js-square"></i> JavaScript</li>
+            <li><i class="fab fa-react"></i> React.js</li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <h4>Backend</h4>
+          <ul>
+            <li><i class="fab fa-node-js"></i> Node.js</li>
+            <li><i class="fas fa-server"></i> Express</li>
+            <li><i class="fab fa-php"></i> PHP</li>
+            <li><i class="fas fa-database"></i> MySQL</li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <h4>Tools</h4>
+          <ul>
+            <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+            <li><i class="fas fa-code"></i> VS Code</li>
+            <li><i class="fab fa-figma"></i> Figma</li>
+            <li><i class="fas fa-fire"></i> Firebase</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="section" data-aos="fade-up">
+      <h2>Blog</h2>
+      <p>Coming soon! Here I’ll share tips, tutorials, and insights into modern web development.</p>
+    </section>
+
+    <section id="achievements" class="section" data-aos="flip-up">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Achieving High School Diploma</li>
+        <li>Certified in Online Programming</li>
+        <li>GitHub Repository Maker</li>
+        <li>Second-Year College Student</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/xyzwarbq" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -230,6 +266,7 @@
     function toggleYouTubeMusic() {
       const iframe = document.getElementById("youtube-iframe");
       const button = document.querySelector(".music-toggle");
+
       if (!isPlaying) {
         iframe.src = "https://www.youtube.com/embed/JGwWNGJdvx8?autoplay=1&loop=1&playlist=JGwWNGJdvx8";
         button.textContent = "Pause Music";
@@ -240,12 +277,6 @@
         isPlaying = false;
       }
     }
-
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("page-loader");
-      loader.classList.add("fade-out");
-      setTimeout(() => loader.style.display = "none", 600);
-    });
   </script>
 </body>
 </html>
