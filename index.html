@@ -9,39 +9,24 @@
   <title>My Personal Portfolio</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-    }
-    .section {
-      margin-top: 60px;
-    }
-    #contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 400px;
-      margin-top: 20px;
-    }
-    #contact input, #contact textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: 'Poppins', sans-serif;
-    }
-    #contact button {
-      padding: 10px;
-      background-color: #007bfc;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    #contact button:hover {
-      background-color: blue;
-    }
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+
   </style>
 </head>
 
