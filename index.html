@@ -43,22 +43,6 @@
       color: #ccc;
     }
 
-    .home__button, button[type="submit"] {
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .home__button:hover, button[type="submit"]:hover, .music-toggle:hover {
-      background-color: #e91e63;
-      box-shadow: 0 0 15px #ff4081, 0 0 30px #ff4081;
-    }
-
     input, textarea {
       width: 100%;
       padding: 0.75rem;
@@ -101,10 +85,11 @@
       align-items: center;
       flex-wrap: wrap;
       padding: 2rem;
+      gap: 2rem;
     }
 
     .home__information {
-      max-width: 50%;
+      max-width: 500px;
     }
 
     .home__img img {
@@ -114,7 +99,7 @@
     }
 
     .home__social {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     .home__social-icon {
@@ -127,10 +112,11 @@
       .home {
         flex-direction: column;
         align-items: center;
-      }
-      .home__information, .home__img {
-        max-width: 100%;
         text-align: center;
+      }
+
+      .home__information {
+        max-width: 100%;
       }
     }
 
@@ -149,6 +135,11 @@
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
+    .music-toggle:hover {
+      background-color: #e91e63;
+      box-shadow: 0 0 15px #ff4081;
+    }
+
     #youtube-iframe {
       display: none;
     }
@@ -156,11 +147,9 @@
 </head>
 
 <body>
-  <!-- Music toggle button -->
   <button class="music-toggle" onclick="toggleYouTubeMusic()">Play Music</button>
   <iframe id="youtube-iframe" width="0" height="0" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
 
-  <!-- HEADER -->
   <header class="l-header">
     <nav class="nav bd-grid">
       <div><a href="#" class="nav__logo">Programmer</a></div>
@@ -177,15 +166,12 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
   <main class="l-main bd-grid">
     <div class="home" data-aos="fade-up">
       <div class="home__information">
         <span class="home__pressent">Hello, My name is</span>
         <h1 class="home__title">Vern Esg</h1>
         <span class="home__skill">Web Developer</span>
-        <button class="home__button">Download CV</button>
-
         <div class="home__social">
           <ion-icon name="logo-facebook" class="home__social-icon"></ion-icon>
           <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
@@ -271,7 +257,6 @@
     </section>
   </main>
 
-  <!-- ICONS & AOS -->
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
