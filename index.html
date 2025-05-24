@@ -9,7 +9,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: rgba(0, 0, 0, 0.7);
-      background-image: url('https://media3.giphy.com/media/1HUfqovo7QL594o5kh/giphy.gif?cid=6c09b952472ophwkrxnaxbkf1u9z7kik3zraii63t2z4q34g&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g');
+      background-image: url('https://media3.giphy.com/media/1HUfqovo7QL594o5kh/giphy.gif');
       background-size: cover;
       background-attachment: fixed;
       color: #fff;
@@ -131,7 +131,6 @@
       }
     }
 
-    /* Animation */
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -166,13 +165,17 @@
       font-weight: 600;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
+
+    #youtube-iframe {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
   <!-- Music toggle button -->
-  <audio id="bg-music" src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3" autoplay loop></audio>
-  <button class="music-toggle" onclick="toggleMusic()">Pause Music</button>
+  <button class="music-toggle" onclick="toggleYouTubeMusic()">Play Music</button>
+  <iframe id="youtube-iframe" width="0" height="0" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
 
   <!-- HEADER -->
   <header class="l-header">
@@ -241,26 +244,30 @@
   <!-- ICONS -->
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 
-  <!-- Music toggle script -->
+  <!-- YouTube Music Player Script -->
   <script>
-    // Reveal animated elements
+    let isPlaying = false;
+
+    function toggleYouTubeMusic() {
+      const iframe = document.getElementById("youtube-iframe");
+      const button = document.querySelector(".music-toggle");
+
+      if (!isPlaying) {
+        iframe.src = "https://www.youtube.com/embed/JGwWNGJdvx8?autoplay=1&loop=1&playlist=JGwWNGJdvx8";
+        button.textContent = "Pause Music";
+        isPlaying = true;
+      } else {
+        iframe.src = "";
+        button.textContent = "Play Music";
+        isPlaying = false;
+      }
+    }
+
+    // Reveal animation
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll('.anime-text, .section, .home__img img, .home__button')
         .forEach(el => el.style.opacity = 1);
     });
-
-    const bgMusic = document.getElementById('bg-music');
-    const toggleBtn = document.querySelector('.music-toggle');
-
-    function toggleMusic() {
-      if (bgMusic.paused) {
-        bgMusic.play();
-        toggleBtn.textContent = "Pause Music";
-      } else {
-        bgMusic.pause();
-        toggleBtn.textContent = "Play Music";
-      }
-    }
   </script>
 </body>
 </html>
