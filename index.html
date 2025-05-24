@@ -9,7 +9,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: rgba(0, 0, 0, 0.7);
-      background-image: url('https://media2.giphy.com/media/vd5TYfojHJ0n6/giphy.gif');
+      background-image: url('https://media2.giphy.com/media/vd5TYfojHJ0n6/giphy.gif?cid=6c09b9526jiyo1up6yhnqv70wnnhzd49ejisinfxusa9f39u&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g');
       background-size: cover;
       background-attachment: fixed;
       color: #fff;
@@ -77,8 +77,8 @@
       margin: 2rem auto;
       max-width: 800px;
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
     .section.visible {
@@ -116,7 +116,12 @@
       max-width: 250px;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-      border: 5px solid #00f;
+      border: 4px solid #00aaff;
+      transition: transform 0.3s ease;
+    }
+
+    .home__img img:hover {
+      transform: scale(1.05);
     }
 
     .home__social {
@@ -141,8 +146,14 @@
     }
 
     @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .anime-text, .home__img img, .home__button {
@@ -203,13 +214,15 @@
         <span class="home__pressent anime-text">Hello, My name is</span>
         <h1 class="home__title anime-text">Vern Esg</h1>
         <span class="home__skill anime-text">Web Developer</span>
+
+        <div class="home__social">
+          <ion-icon name="logo-facebook" class="home__social-icon"></ion-icon>
+          <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
+          <ion-icon name="logo-twitter" class="home__social-icon"></ion-icon>
+        </div>
       </div>
+
       <div class="home__img"><img src="https://i.imgur.com/bfELRaR.jpeg" alt="Profile Image" /></div>
-      <div class="home__social">
-        <ion-icon name="logo-facebook" class="home__social-icon"></ion-icon>
-        <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
-        <ion-icon name="logo-twitter" class="home__social-icon"></ion-icon>
-      </div>
     </div>
 
     <!-- Sections -->
@@ -236,9 +249,9 @@
       <h2>Achievements</h2>
       <ul>
         <li>Achieving High School Diploma</li>
-        <li>Certified at Online Programming</li>
-        <li>GitHub Repository Maker</li>
-        <li>Second Year College Student</li>
+        <li>Certified at online programming</li>
+        <li>GitHub repository maker</li>
+        <li>Second year College student</li>
       </ul>
     </section>
 
@@ -262,6 +275,7 @@
     function toggleYouTubeMusic() {
       const iframe = document.getElementById("youtube-iframe");
       const button = document.querySelector(".music-toggle");
+
       if (!isPlaying) {
         iframe.src = "https://www.youtube.com/embed/Ukko12nzYcI?autoplay=1&loop=1&playlist=Ukko12nzYcI";
         button.textContent = "Pause Music";
@@ -273,10 +287,12 @@
       }
     }
 
-    // Reveal sections on scroll
-    const observer = new IntersectionObserver(entries => {
+    // Scroll Animation Script
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
     }, { threshold: 0.1 });
 
