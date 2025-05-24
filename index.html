@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <title>My Personal Portfolio</title>
   <style>
     body {
@@ -133,36 +134,6 @@
       }
     }
 
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .anime-text, .section, .home__img img, .home__button {
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-    }
-
-    .anime-text:nth-child(1) { animation-delay: 0.2s; }
-    .anime-text:nth-child(2) { animation-delay: 0.4s; }
-    .anime-text:nth-child(3) { animation-delay: 0.6s; }
-
-    .section ul li {
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
-    }
-
-    .section ul li:nth-child(1) { animation-delay: 0.3s; }
-    .section ul li:nth-child(2) { animation-delay: 0.5s; }
-    .section ul li:nth-child(3) { animation-delay: 0.7s; }
-    .section ul li:nth-child(4) { animation-delay: 0.9s; }
-
     .music-toggle {
       position: fixed;
       top: 20px;
@@ -208,12 +179,12 @@
 
   <!-- MAIN -->
   <main class="l-main bd-grid">
-    <div class="home">
+    <div class="home" data-aos="fade-up">
       <div class="home__information">
-        <span class="home__pressent anime-text">Hello, My name is</span>
-        <h1 class="home__title anime-text">Vern Esg</h1>
-        <span class="home__skill anime-text">Web Developer</span>
-        <button class="home__button anime-text">Download CV</button>
+        <span class="home__pressent">Hello, My name is</span>
+        <h1 class="home__title">Vern Esg</h1>
+        <span class="home__skill">Web Developer</span>
+        <button class="home__button">Download CV</button>
 
         <div class="home__social">
           <ion-icon name="logo-facebook" class="home__social-icon"></ion-icon>
@@ -221,19 +192,18 @@
           <ion-icon name="logo-twitter" class="home__social-icon"></ion-icon>
         </div>
       </div>
-
       <div class="home__img">
         <img src="https://i.imgur.com/bfELRaR.jpeg" alt="Profile Image" />
       </div>
     </div>
 
     <!-- Sections -->
-    <section id="about" class="section">
+    <section id="about" class="section" data-aos="fade-right">
       <h2>About Me</h2>
       <p>I am Vern Esg, a passionate web developer who builds clean and creative websites.</p>
     </section>
 
-    <section id="services" class="section">
+    <section id="services" class="section" data-aos="fade-left">
       <h2>Services</h2>
       <ul>
         <li>Responsive Web Development</li>
@@ -242,7 +212,7 @@
       </ul>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section" data-aos="zoom-in">
       <h2>Skills</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
         <div style="flex: 1; min-width: 200px;">
@@ -275,12 +245,12 @@
       </div>
     </section>
 
-    <section id="blog" class="section">
+    <section id="blog" class="section" data-aos="fade-up">
       <h2>Blog</h2>
       <p>Coming soon! Here I’ll share tips, tutorials, and insights into modern web development.</p>
     </section>
 
-    <section id="achievements" class="section">
+    <section id="achievements" class="section" data-aos="flip-up">
       <h2>Achievements</h2>
       <ul>
         <li>Achieving High School Diploma</li>
@@ -290,7 +260,7 @@
       </ul>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section" data-aos="fade-up">
       <h2>Contact</h2>
       <form action="https://formspree.io/f/xyzwarbq" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
@@ -301,13 +271,13 @@
     </section>
   </main>
 
-  <!-- ICONS -->
+  <!-- ICONS & AOS -->
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-
-  <!-- YouTube Music Player Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    let isPlaying = false;
+    AOS.init({ duration: 1000 });
 
+    let isPlaying = false;
     function toggleYouTubeMusic() {
       const iframe = document.getElementById("youtube-iframe");
       const button = document.querySelector(".music-toggle");
@@ -322,12 +292,6 @@
         isPlaying = false;
       }
     }
-
-    // Reveal animation
-    window.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll('.anime-text, .section, .home__img img, .home__button')
-        .forEach(el => el.style.opacity = 1);
-    });
   </script>
 </body>
 </html>
